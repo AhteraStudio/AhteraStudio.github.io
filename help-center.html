@@ -1,0 +1,269 @@
+<style>
+    .notifsukses {
+position: relative;
+background-color: white;
+border-radius: 25px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.submit-btn {
+  padding-top: 0.75rem; /* py-3 */
+  padding-bottom: 0.75rem; /* py-3 */
+  padding-left: 1.25rem; /* px-5 */
+  padding-right: 1.25rem; /* px-5 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  text-align: center;
+  color: #ffffff; /* text-white */
+  background-color: #000000; /* bg-black */
+  border-radius: 0.5rem; /* rounded-lg */
+  width: fit-content; /* sm:w-fit */
+}
+
+.submit-btn:hover {
+  background-color: #374151; /* hover:bg-gray-800 */
+}
+
+.submit-btn:focus {
+  outline: none; /* focus:outline-none */
+  box-shadow: 0 0 0 4px #D1D5DB; /* focus:ring-4 focus:ring-gray-300 */
+}
+.input-box {
+  display: block;
+  padding: 0.625rem; /* p-2.5 */
+  width: 100%; /* w-full */
+  font-size: 0.875rem; /* text-sm */
+  color: #111827; /* text-gray-900 */
+  background-color: #F9FAFB; /* bg-gray-50 */
+  border: 1px solid #D1D5DB; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.input-box:focus,
+.input-box:hover {
+  border-color: #000000; /* focus:border-black hover:border-black */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); /* focus:ring-black */
+}
+
+
+/* Input box styling */
+.input-box {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  width: 100%;
+}
+
+.input-box:focus {
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+  appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db; /* Default border color */
+  border-radius: 0.25rem; /* Border radius */
+  width: 1rem; /* Width */
+  height: 1rem; /* Height */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #fbbf24; /* Background color when checked */
+  border-color: #fbbf24; /* Border color when checked */
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 0.125rem; /* Offset to center the checkmark */
+  left: 0.25rem; /* Offset to center the checkmark */
+  width: 0.375rem; /* Width of checkmark */
+  height: 0.625rem; /* Height of checkmark */
+  border: solid white; /* Color of checkmark */
+  border-width: 0 2px 2px 0; /* Width of checkmark */
+  transform: rotate(45deg); /* Rotate to create checkmark */
+}
+
+.custom-checkbox:hover,
+.custom-checkbox:focus {
+  border-color: #fbbf24; /* Border color when hovered or focused */
+}
+
+#accept-btn {
+  color: white;
+  background-color: black; /* bg-gray-800 */
+  transition: background-color 0.3s ease;
+  font-weight: 500; /* font-medium */
+  border-radius: 10px; /* rounded-lg */
+  font-size: 0.875rem; /* text-sm */
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  text-align: center;
+}
+
+#accept-btn:hover {
+  background-color: gray; /* hover:bg-blue-800 */
+}
+
+#accept-btn:focus {
+  outline: none; /* focus:outline-none */
+  ring: 4px; /* focus:ring-4 */
+  ring-color: #93c5fd; /* focus:ring-blue-300 */
+}
+
+#decline-btn {
+  color: #1f2937; /* text-gray-900 */
+  background-color: #ffffff; /* bg-white */
+  font-weight: 500; /* font-medium */
+  border-radius: 10px; /* rounded-lg */
+  font-size: 0.875rem; /* text-sm */
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  margin-left: 0.75rem; /* ms-3 */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 10; /* focus:z-10 */
+}
+
+#decline-btn:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+  color: gray; /* hover:text-blue-700 */
+}
+
+#decline-btn:focus {
+  outline: none; /* focus:outline-none */
+  ring: 4px; /* focus:ring-4 */
+  ring-color: #f3f4f6; /* focus:ring-gray-100 */
+}
+
+.bodyterm {
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  margin-top: 70px;
+}
+</style>
+
+<div id="sendgagal" tabindex="-1" class="hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full" style="background-color: rgba(0, 0, 0, 0.5);">
+  <div class="relative p-4 w-full max-w-md max-h-full">
+    <div class="notifgagal">
+      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="sendgagal">
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-4 md:p-5 text-center">
+        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+        </svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500">Hey! Sorry message is not being sent, it seems there is a problem</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bg-white">
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Contact Us</h2>
+    <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Need assistance? Reach out to us anytime, and we’ll be happy to help. Use the form below or contact us using the details provided.</p>
+    <form id="contact-form" action="https://script.google.com/macros/s/AKfycbzPnOqz11J7NXQwM6VA0K5io7DUcRTgeQ6i1Hs1LVqf9mVbCJrKSdKHO-1vQTUrbtQl/exec" method="post" class="space-y-8">
+      <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+        <input type="email" id="email" name="email" class="input-box" placeholder="name@ahtera.com" required>
+      </div>
+      <div>
+        <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Subject</label>
+        <input type="text" id="subject" name="subject" class="input-box" placeholder="Let us know how we can help you" required>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
+        <textarea id="message" name="message" rows="6" class="input-box" placeholder="Leave a comment..."></textarea>
+      </div>
+      <div class="flex items-center">
+        <input id="terms-checkbox" type="checkbox" class="custom-checkbox" disabled>
+        <label for="terms-checkbox" class="ml-2 block text-sm text-gray-900">Saya menyetujui semua ketentuan</label>
+      </div>
+      <button id="submit-btn" type="submit" class="submit-btn" disabled>Send message</button>
+    </form>
+  </div>
+</section>
+
+<div id="sendsukses" tabindex="-1" class="hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full" style="background-color: rgba(0, 0, 0, 0.5);">
+  <div class="relative p-4 w-full max-w-md max-h-full">
+    <div class="notifsukses">
+      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="sendsukses">
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-4 md:p-5 text-center">
+      <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"/>
+  <path d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"/>
+</svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500">Hello! Thank you for contacting the Ahtera Help Center. We have received your message and our team will respond immediately. Stay tuned, OK!</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full">
+  <div class="relative p-4 w-full max-w-2xl max-h-full">
+    <div class="bodyterm relative bg-white rounded shadow-lg">
+      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold text-gray-900">Terms of Contact Us</h3>
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <div class="p-4 md:p-5 space-y-4">
+        <!--isi deskripsi-->
+<ol>
+        <li>
+            <strong>Accuracy of Information:</strong> By using the 'Contact Us' feature, you agree to provide accurate, current, and complete information about yourself as prompted by our contact forms. You acknowledge that providing false information may result in a delay in our response or a refusal to address your inquiry.
+        </li>
+        <li>
+            <strong>Respect and Etiquette:</strong> You agree to communicate respectfully and courteously with our representatives. Any form of inappropriate, abusive, or threatening behavior will not be tolerated and may result in the termination of communication.
+        </li>
+        <li>
+            <strong>Response Time:</strong> We strive to respond to all inquiries promptly. However, response times may vary based on the nature and complexity of your query. You agree to be patient and understanding during this process.
+        </li>
+        <li>
+            <strong>Use of Provided Information:</strong> Any information you provide through the 'Contact Us' feature will be used in accordance with our privacy policy. You consent to the collection, use, and disclosure of your information as described in our privacy policy.
+        </li>
+        <li>
+            <strong>Confidentiality:</strong> While we take measures to protect your information, you acknowledge that communications via the internet are not entirely secure. We cannot guarantee the complete confidentiality of information sent through the 'Contact Us' feature.
+        </li>
+        <li>
+            <strong>Purpose of Contact:</strong> The 'Contact Us' feature is intended for legitimate inquiries, feedback, and support requests. Any misuse of this feature, including spam or malicious activity, will be reported and may result in further action.
+        </li>
+        <li>
+            <strong>Legal Compliance:</strong> You agree to comply with all applicable laws and regulations when using the 'Contact Us' feature. Any violation of these terms may result in legal consequences.
+        </li>
+    </ol>
+      </div>
+      <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+    <button id="accept-btn" type="button" data-modal-hide="default-modal">I accept</button>
+<button id="decline-btn" type="button" data-modal-hide="default-modal">Decline</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function _0x351e(){const _0x2297e4=['querySelectorAll','remove','1183881rSySbX','add','116519cUsNeX','18eOgtFa','21993004NMiouZ','target','hidden','accept-btn','submit','click','[data-modal-hide]','catch','9124740wqklvx','DOMContentLoaded','default-modal','POST','stopPropagation','sendgagal','submit-btn','checked','8LSzPgv','10LyEoRE','1543525cCQurv','getElementById','terms-checkbox','1143cxAOws','38880nAVwzw','3348513EvWqNG','closest','addEventListener','classList'];_0x351e=function(){return _0x2297e4;};return _0x351e();}function _0x44e9(_0xc4dbfd,_0x3d7519){const _0x351e10=_0x351e();return _0x44e9=function(_0x44e963,_0x35d38b){_0x44e963=_0x44e963-0x151;let _0x41b00=_0x351e10[_0x44e963];return _0x41b00;},_0x44e9(_0xc4dbfd,_0x3d7519);}const _0x284494=_0x44e9;(function(_0x377087,_0x23a5ab){const _0x4847a4=_0x44e9,_0x34dd85=_0x377087();while(!![]){try{const _0x5ef6e5=-parseInt(_0x4847a4(0x16c))/0x1*(parseInt(_0x4847a4(0x15e))/0x2)+parseInt(_0x4847a4(0x16a))/0x3*(-parseInt(_0x4847a4(0x15d))/0x4)+parseInt(_0x4847a4(0x15f))/0x5*(parseInt(_0x4847a4(0x16d))/0x6)+-parseInt(_0x4847a4(0x164))/0x7+parseInt(_0x4847a4(0x163))/0x8*(parseInt(_0x4847a4(0x162))/0x9)+-parseInt(_0x4847a4(0x155))/0xa+parseInt(_0x4847a4(0x16e))/0xb;if(_0x5ef6e5===_0x23a5ab)break;else _0x34dd85['push'](_0x34dd85['shift']());}catch(_0x4683f7){_0x34dd85['push'](_0x34dd85['shift']());}}}(_0x351e,0xbe6f1),document[_0x284494(0x166)](_0x284494(0x156),function(){const _0x5b65c8=_0x284494,_0x1d7783=document[_0x5b65c8(0x160)](_0x5b65c8(0x161)),_0x4511a2=document['getElementById'](_0x5b65c8(0x157)),_0x2efe4d=document[_0x5b65c8(0x160)](_0x5b65c8(0x171)),_0x1f4cd6=document[_0x5b65c8(0x160)]('decline-btn'),_0x1ecccc=document[_0x5b65c8(0x160)](_0x5b65c8(0x15b)),_0x170f68=document['getElementById']('contact-form'),_0x4d45ee=document['getElementById']('sendsukses'),_0x4a1828=document['getElementById'](_0x5b65c8(0x15a)),_0x1105b6=document[_0x5b65c8(0x168)](_0x5b65c8(0x153));_0x1d7783['parentElement'][_0x5b65c8(0x166)](_0x5b65c8(0x152),function(_0x78f36c){const _0x206854=_0x5b65c8;_0x78f36c[_0x206854(0x159)](),!_0x1d7783['checked']?_0x4511a2['classList'][_0x206854(0x169)]('hidden'):(_0x1d7783[_0x206854(0x15c)]=![],_0x1ecccc['disabled']=!![]);}),_0x2efe4d[_0x5b65c8(0x166)](_0x5b65c8(0x152),function(){const _0x7dd1be=_0x5b65c8;_0x1d7783[_0x7dd1be(0x15c)]=!![],_0x4511a2['classList'][_0x7dd1be(0x16b)](_0x7dd1be(0x170)),_0x1ecccc['disabled']=![];}),_0x1f4cd6[_0x5b65c8(0x166)](_0x5b65c8(0x152),function(){const _0x443ce3=_0x5b65c8;_0x1d7783[_0x443ce3(0x15c)]=![],_0x4511a2['classList'][_0x443ce3(0x16b)](_0x443ce3(0x170)),_0x1ecccc['disabled']=!![];}),window['addEventListener'](_0x5b65c8(0x152),function(_0x53ea46){const _0x270d06=_0x5b65c8;_0x53ea46[_0x270d06(0x16f)]===_0x4511a2&&_0x4511a2['classList'][_0x270d06(0x16b)](_0x270d06(0x170));}),_0x170f68[_0x5b65c8(0x166)](_0x5b65c8(0x151),function(_0x18f8b9){const _0x1607b7=_0x5b65c8;_0x18f8b9['preventDefault'](),fetch(_0x170f68['action'],{'method':_0x1607b7(0x158),'body':new FormData(_0x170f68)})['then'](_0x381f60=>{const _0x44075e=_0x1607b7;_0x381f60['ok']?_0x4d45ee[_0x44075e(0x167)]['remove']('hidden'):_0x4a1828[_0x44075e(0x167)]['remove'](_0x44075e(0x170));})[_0x1607b7(0x154)](_0x538819=>{const _0x2c356a=_0x1607b7;_0x4a1828[_0x2c356a(0x167)][_0x2c356a(0x169)](_0x2c356a(0x170));});}),_0x1105b6['forEach'](_0x58d354=>{const _0x614b76=_0x5b65c8;_0x58d354['addEventListener'](_0x614b76(0x152),function(){const _0x72bf6a=_0x614b76,_0x582d56=_0x58d354[_0x72bf6a(0x165)]('.fixed');_0x582d56[_0x72bf6a(0x167)][_0x72bf6a(0x16b)](_0x72bf6a(0x170));});});}));
+</script>
